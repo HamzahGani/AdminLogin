@@ -27,7 +27,10 @@ namespace AdminLogin
                 sqlCon.Open();
                 SqlDataAdapter sqlDA = new SqlDataAdapter(
                     "SELECT Username, IsAdmin, Name, Surname, Number " +
-                    "FROM Users", 
+                    "FROM Users WHERE Username ='" + txtSearch.Text + 
+                    "' or Name ='" + txtSearch.Text + 
+                    "' or Surname ='" + txtSearch.Text + 
+                    "' or Number ='" + txtSearch.Text + "'",
                     sqlCon);
                 DataTable sqlDT = new DataTable();
                 sqlDA.Fill(sqlDT);
