@@ -11,32 +11,89 @@ using System.Data.SqlClient;
 
 namespace AdminLogin
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        
+        public Login()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
+         SqlConnection sqlCon = new SqlConnection(connectionString);
+         SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Login where username ='" + txtUser.Text + "' and password ='" + txtPass.Text + "'", sqlCon);
+         DataTable dt = new DataTable();
+         sda.Fill(dt);
+         if (dt.Rows[0][0].ToString()=="1")
+         {
+             this.Hide();
+             Profile mm = new Profile();
+             mm.Show();
+         } else
+         {
+             MessageBox.Show("Username or password is incorrect", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+         */
+            /*
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDA = new SqlDataAdapter("SELECT count(*) FROM Users where username ='" + txtUser.Text + "' and password ='" + txtPass.Text + "'", sqlCon);
+                DataTable sqlDT = new DataTable();
+                sqlDA.Fill(sqlDT);
+
+                if (sqlDT.Rows[0][0].ToString() == "1")
+                {
+                    this.Hide();
+                    Profile mm = new Profile();
+                    mm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username or password is incorrect", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                sqlCon.Close();
+            }
+            */
 
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hgani\OneDrive\Documents\Users.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Login where username ='" + txtUser.Text + "' and password ='" + txtPass.Text + "'", conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString()=="1")
+
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hgani\OneDrive\Documents\Users.mdf;Integrated Security=True;Connect Timeout=30";
+
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                this.Hide();
-                Profile mm = new Profile();
-                mm.Show();
-            } else
-            {
-                MessageBox.Show("Username or password is incorrect", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                sqlCon.Open();
+                SqlCommand sqlCom = new SqlCommand();
+                sqlCom.Connection = sqlCon;
+                sqlCom.CommandText = "SELECT * FROM Users";
+                SqlDataReader sqlDR = sqlCom.ExecuteReader();
+                if (sqlDR.Read())
+                {
+                    if(txtUser.Text.Equals(sqlDR["username"].ToString()) && txtPass.Text.Equals(sqlDR["password"].ToString()))
+                    {
+                        pnlLogin.Visible = false;
+                        pnlLoggedIn.Visible = true;
+
+                        /*
+                        this.Hide();
+                        Profile mm = new Profile();
+                        mm.Show();
+                        */
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username or password is incorrect", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                sqlCon.Close();
             }
         }
     }
