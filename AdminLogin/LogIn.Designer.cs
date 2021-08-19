@@ -91,6 +91,7 @@ namespace AdminLogin
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(200, 184);
             this.pnlLogin.TabIndex = 6;
+            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
             // 
             // pnlLoggedIn
             // 
@@ -132,6 +133,7 @@ namespace AdminLogin
             this.btnUserPage.TabIndex = 1;
             this.btnUserPage.Text = "Users";
             this.btnUserPage.UseVisualStyleBackColor = true;
+            this.btnUserPage.Click += new System.EventHandler(this.btnUserPage_Click);
             // 
             // btnProfilePage
             // 
@@ -141,6 +143,7 @@ namespace AdminLogin
             this.btnProfilePage.TabIndex = 0;
             this.btnProfilePage.Text = "Profile";
             this.btnProfilePage.UseVisualStyleBackColor = true;
+            this.btnProfilePage.Click += new System.EventHandler(this.btnProfilePage_Click);
             // 
             // Login
             // 
@@ -148,8 +151,8 @@ namespace AdminLogin
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(229, 212);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlLoggedIn);
+            this.Controls.Add(this.pnlLogin);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -13,7 +13,8 @@ namespace AdminLogin
 {
     public partial class Login : Form
     {
-        
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hgani\OneDrive\Documents\Users.mdf;Integrated Security=True;Connect Timeout=30";
+
         public Login()
         {
             InitializeComponent();
@@ -63,9 +64,6 @@ namespace AdminLogin
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hgani\OneDrive\Documents\Users.mdf;Integrated Security=True;Connect Timeout=30";
-
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 
@@ -80,12 +78,6 @@ namespace AdminLogin
                     {
                         pnlLogin.Visible = false;
                         pnlLoggedIn.Visible = true;
-
-                        /*
-                        this.Hide();
-                        Profile mm = new Profile();
-                        mm.Show();
-                        */
                     }
                     else
                     {
@@ -95,6 +87,25 @@ namespace AdminLogin
 
                 sqlCon.Close();
             }
+        }
+
+        private void pnlLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnUserPage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Users userInstance = new Users();
+            userInstance.Show();
+        }
+
+        private void btnProfilePage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profile profileInstance = new Profile();
+            profileInstance.Show();
         }
     }
 }
