@@ -57,6 +57,8 @@ namespace AdminLogin
             */
 
 
+            //&& txtPass.Text.Equals(sqlDR["password"].ToString())
+
             /*
             this.Hide();
             Users userInstance = new Users();
