@@ -30,9 +30,9 @@ namespace AdminLogin
         private void InitializeComponent()
         {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,15 +45,6 @@ namespace AdminLogin
             this.lblWelcome.Size = new System.Drawing.Size(224, 65);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome";
-            // 
-            // dgvUsers
-            // 
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(13, 95);
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.RowTemplate.Height = 25;
-            this.dgvUsers.Size = new System.Drawing.Size(775, 343);
-            this.dgvUsers.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -72,6 +63,15 @@ namespace AdminLogin
             this.txtSearch.PlaceholderText = "Search";
             this.txtSearch.Size = new System.Drawing.Size(197, 23);
             this.txtSearch.TabIndex = 3;
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Location = new System.Drawing.Point(13, 95);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.RowTemplate.Height = 25;
+            this.dgvUsers.Size = new System.Drawing.Size(775, 343);
+            this.dgvUsers.TabIndex = 1;
             // 
             // Users
             // 
@@ -93,8 +93,8 @@ namespace AdminLogin
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView dgvUsers;
     }
 }
