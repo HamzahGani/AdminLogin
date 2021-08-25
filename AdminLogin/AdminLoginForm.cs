@@ -185,34 +185,29 @@ namespace AdminLogin
 
         private void btnProfileUpdate_Click(object sender, EventArgs e)
         {
+            //string updateProfile = "UPDATE Users " +
+              //  "Set Username = @Username, Name = @Name, Surname, Number " +
+               // "FROM Users WHERE Username ='" + loggedUser + "'";
+
             lockProfilePage();
             //update db
 
-             /*
-            string updateProfile = "UPDATE Users Set Username, Name, Surname, Number " +
-                "FROM Users WHERE Username ='" + loggedUser + "'";
+            // /*
+            string updateProfile = "UPDATE Users " +
+                "SET Name = @Name, Surname = @Surname, Number = @Number " +
+                "WHERE Username ='" + loggedUser + "'";
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                sqlCon.Open();
                 SqlCommand sqlCom = new SqlCommand();
                 sqlCom.Connection = sqlCon;
                 sqlCom.CommandText = updateProfile;
-                SqlDataReader sqlDR = sqlCom.ExecuteReader();
-                if (sqlDR.Read())
-                {
-                    txtProfileUsername.Text = sqlDR["Username"].ToString();
-                    txtProfileName.Text = sqlDR["Name"].ToString();
-                    txtProfileSurname.Text = sqlDR["Surname"].ToString();
-                    txtProfileNumber.Text = sqlDR["Number"].ToString();
+                sqlCom.Parameters.AddWithValue("@Name", txtProfileName.Text);
+                sqlCom.Parameters.AddWithValue("@Surname", txtProfileSurname.Text);
+                sqlCom.Parameters.AddWithValue("@Number", txtProfileNumber.Text);
 
-                }
-                else
-                {
-                    lblError.Text = "Cannot find username";
-                    lblError.Visible = true;
-                }
-
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
             }
             // */
