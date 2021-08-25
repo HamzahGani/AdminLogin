@@ -1,7 +1,7 @@
 ﻿
 namespace AdminLogin
 {
-    partial class AdminLoginF
+    partial class AdminLoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -383,7 +383,7 @@ namespace AdminLogin
             this.btnProfileUpdate.UseVisualStyleBackColor = true;
             this.btnProfileUpdate.Click += new System.EventHandler(this.btnProfileUpdate_Click);
             // 
-            // AdminLoginF
+            // AdminLoginForm
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -395,7 +395,7 @@ namespace AdminLogin
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlUsers);
-            this.Name = "AdminLoginF";
+            this.Name = "AdminLoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlLogin.ResumeLayout(false);
