@@ -181,12 +181,13 @@ namespace AdminLogin
         }
 
         /* When the menu button on the users panel is clicked
-         * clear the search box
+         * clear the search box and Displayed data
          * load the menu panel
          */
         private void btnMenuFromUsers_Click(object sender, EventArgs e)
         {
             txtSearch.Text = ""; //clear search box
+            dgvUsers.DataSource = null; //clear displayed data
             loadPanel("Menu"); //load panel menu
         }
 
@@ -365,15 +366,6 @@ namespace AdminLogin
             txtProfileName.Enabled = false;
             txtProfileSurname.Enabled = false;
             txtProfileNumber.Enabled = false;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlLogin_Paint(object sender, PaintEventArgs e)
-        {
         }
     }
 }

@@ -114,7 +114,6 @@ namespace AdminLogin
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(346, 174);
             this.pnlLogin.TabIndex = 6;
-            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
             // 
             // lblLogin
             // 
@@ -195,10 +194,10 @@ namespace AdminLogin
             // 
             // pnlUsers
             // 
-            this.pnlUsers.Controls.Add(this.dgvUsers);
             this.pnlUsers.Controls.Add(this.btnMenuFromUsers);
             this.pnlUsers.Controls.Add(this.btnSearch);
             this.pnlUsers.Controls.Add(this.txtSearch);
+            this.pnlUsers.Controls.Add(this.dgvUsers);
             this.pnlUsers.Location = new System.Drawing.Point(12, 84);
             this.pnlUsers.Name = "pnlUsers";
             this.pnlUsers.Size = new System.Drawing.Size(645, 316);
@@ -391,13 +390,12 @@ namespace AdminLogin
             this.ClientSize = new System.Drawing.Size(669, 455);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblHeader);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlUsers);
             this.Controls.Add(this.pnlProfile);
-            this.Controls.Add(this.pnlLogin);
             this.Name = "AdminLoginForm";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
