@@ -36,8 +36,8 @@ namespace AdminLogin
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnUserPage = new System.Windows.Forms.Button();
-            this.btnProfilePage = new System.Windows.Forms.Button();
+            this.btnUserPnl = new System.Windows.Forms.Button();
+            this.btnProfilePnl = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
@@ -128,8 +128,8 @@ namespace AdminLogin
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Controls.Add(this.btnUserPage);
-            this.pnlMenu.Controls.Add(this.btnProfilePage);
+            this.pnlMenu.Controls.Add(this.btnUserPnl);
+            this.pnlMenu.Controls.Add(this.btnProfilePnl);
             this.pnlMenu.Controls.Add(this.btnLogOut);
             this.pnlMenu.Controls.Add(this.lblWelcome);
             this.pnlMenu.Location = new System.Drawing.Point(12, 87);
@@ -138,27 +138,27 @@ namespace AdminLogin
             this.pnlMenu.TabIndex = 7;
             this.pnlMenu.Visible = false;
             // 
-            // btnUserPage
+            // btnUserPnl
             // 
-            this.btnUserPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUserPage.Location = new System.Drawing.Point(3, 54);
-            this.btnUserPage.Name = "btnUserPage";
-            this.btnUserPage.Size = new System.Drawing.Size(91, 33);
-            this.btnUserPage.TabIndex = 0;
-            this.btnUserPage.Text = "Users";
-            this.btnUserPage.UseVisualStyleBackColor = true;
-            this.btnUserPage.Click += new System.EventHandler(this.btnUserPage_Click);
+            this.btnUserPnl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUserPnl.Location = new System.Drawing.Point(3, 54);
+            this.btnUserPnl.Name = "btnUserPnl";
+            this.btnUserPnl.Size = new System.Drawing.Size(91, 33);
+            this.btnUserPnl.TabIndex = 0;
+            this.btnUserPnl.Text = "Users";
+            this.btnUserPnl.UseVisualStyleBackColor = true;
+            this.btnUserPnl.Click += new System.EventHandler(this.btnUserPanel_Click);
             // 
-            // btnProfilePage
+            // btnProfilePnl
             // 
-            this.btnProfilePage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProfilePage.Location = new System.Drawing.Point(135, 54);
-            this.btnProfilePage.Name = "btnProfilePage";
-            this.btnProfilePage.Size = new System.Drawing.Size(91, 33);
-            this.btnProfilePage.TabIndex = 1;
-            this.btnProfilePage.Text = "Profile";
-            this.btnProfilePage.UseVisualStyleBackColor = true;
-            this.btnProfilePage.Click += new System.EventHandler(this.btnProfilePage_Click);
+            this.btnProfilePnl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfilePnl.Location = new System.Drawing.Point(135, 54);
+            this.btnProfilePnl.Name = "btnProfilePnl";
+            this.btnProfilePnl.Size = new System.Drawing.Size(91, 33);
+            this.btnProfilePnl.TabIndex = 1;
+            this.btnProfilePnl.Text = "Profile";
+            this.btnProfilePnl.UseVisualStyleBackColor = true;
+            this.btnProfilePnl.Click += new System.EventHandler(this.btnProfilePanel_Click);
             // 
             // btnLogOut
             // 
@@ -389,12 +389,12 @@ namespace AdminLogin
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 455);
-            this.Controls.Add(this.pnlProfile);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlUsers);
+            this.Controls.Add(this.pnlProfile);
+            this.Controls.Add(this.pnlLogin);
             this.Name = "AdminLoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -421,8 +421,8 @@ namespace AdminLogin
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Button btnUserPage;
-        private System.Windows.Forms.Button btnProfilePage;
+        private System.Windows.Forms.Button btnUserPnl;
+        private System.Windows.Forms.Button btnProfilePnl;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label lblError;
